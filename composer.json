@@ -3,6 +3,12 @@
     "description": "Library for Smsales Api Triggers. Use this to send bulk sms.",
     "type": "library",
     "license": "MIT",
+    "keywords": [
+        "smsales",
+        "bulk-sms",
+        "shiftechafrica",
+        "fintech solution"
+    ],
     "authors": [
         {
             "name": "shiftechafrica",
@@ -14,7 +20,7 @@
         "guzzlehttp/guzzle": "^7.3"
     },
     "autoload": {
-        "psr-4": {`
+        "psr-4": {
             "SMSALES\\": "src/"
         }
     },

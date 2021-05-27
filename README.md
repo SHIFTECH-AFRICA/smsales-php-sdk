@@ -87,7 +87,7 @@ How to use the smsales-php-sdk to initiate different levels of *api's*
             "message" => "",// required
             "phone_numbers" => ["2547XXXXXXXX","2540XXXXXXXX","2547XXXXXXXX"],// required
             "scheduled_at" => "Y-m-d H:i:s", // optional
-            "callback_url"=>"https://yourdomain/report"// optional this should be a POST request
+            "callback_url"=> "https://yourdomain/report"// optional this should be a POST request
         ]);
 ```
 
