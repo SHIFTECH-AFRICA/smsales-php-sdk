@@ -17,6 +17,7 @@
   <a href="https://packagist.org/packages/shiftechafrica/smsales-php-sdk">
   <img src="https://poser.pugx.org/shiftechafrica/smsales-php-sdk/downloads">
   </a>
+  <br><br>
   <a href="https://docs.smsales.co.ke/"><img src="https://github.com/dev-techguy/TechGuy/blob/master/doc.png" width="200"></a>
 </p>
 
