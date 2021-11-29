@@ -110,12 +110,15 @@ These are the responses.
 
 ```json
 {
-    "sent": true,
-    "phone_number": "2547XXXXXXXX",
-    "batch": "1EPDHVREI6",
-    "account": {
-        "sms_balance": 764
-    }
+  "sent": true,
+  "sender": "SHIFTECH",
+  "api_sender": "shiftech",
+  "phone_number": "254XXXXXXXX",
+  "batch": "1KTHKGKM8R",
+  "account": {
+    "sender_balance": 7000,
+    "sms_balance": 13200
+  }
 }
 ```
 
