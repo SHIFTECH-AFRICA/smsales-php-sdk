@@ -18,7 +18,7 @@ class Trigger
     /**
      * @var Repository|Application|mixed
      */
-    private $baseUri;
+    private mixed $baseUri;
 
     /**
      * -----------------------------
@@ -37,7 +37,7 @@ class Trigger
      * -------------------------------
      * @return mixed
      */
-    public function index()
+    public function index(): mixed
     {
         try {
             return json_decode($this->processRequest(
@@ -60,7 +60,7 @@ class Trigger
      * @param array $options
      * @return mixed
      */
-    public function send(array $options)
+    public function send(array $options): mixed
     {
         try {
             return json_decode($this->processRequest(
