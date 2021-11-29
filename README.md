@@ -84,7 +84,8 @@ How to use the smsales-php-sdk to initiate different levels of *api's*
          * @return mixed
          */
         (new Trigger())->send([
-            "message" => "",// required
+            "api_sender" => "shiftech",// required check on your senderID's list for the API Sender
+            "message" => "Hello Smsales.",// required
             "phone_numbers" => ["2547XXXXXXXX","2540XXXXXXXX","2547XXXXXXXX"],// required
             "scheduled_at" => "Y-m-d H:i:s", // optional
             "callback_url"=> "https://yourdomain/report"// optional this should be a POST request
@@ -100,7 +101,7 @@ These are the responses.
 ```json
 {
     "data": {
-        "message": "Accepted for processing..."
+        "message": "Accepted for dispatch..."
     }
 }
 ```
@@ -109,12 +110,15 @@ These are the responses.
 
 ```json
 {
-    "sent": true,
-    "phone_number": "2547XXXXXXXX",
-    "batch": "1EPDHVREI6",
-    "account": {
-        "sms_balance": 764
-    }
+  "sent": true,
+  "sender": "SHIFTECH",
+  "api_sender": "shiftech",
+  "phone_number": "254XXXXXXXX",
+  "batch": "1KTHKGKM8R",
+  "account": {
+    "sender_balance": 7000,
+    "sms_balance": 13200
+  }
 }
 ```
 
@@ -122,7 +126,7 @@ These are the responses.
 
 | Version | Status | Packagist                    | Namespace | Repo                                                                         |
 | ------- | ------ | ---------------------------- | --------- | ---------------------------------------------------------------------------- |
-| 1.x     | Latest | `shiftechafrica/smsales-php-sdk` | `SMSALES`     | [v1.0.0](https://github.com/SHIFTECH-AFRICA/smsales-php-sdk/releases/tag/v1.0.0) |
+| 1.x     | Latest | `shiftechafrica/smsales-php-sdk` | `SMSALES`     | [v1.0.2](https://github.com/SHIFTECH-AFRICA/smsales-php-sdk/releases/tag/v1.0.2) |
 
 [smsales-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/smsales-php-sdk.git
 
