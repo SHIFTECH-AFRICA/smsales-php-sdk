@@ -7,7 +7,7 @@ namespace SMSALES\Traits;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
-use SMSALES\API;
+use SMSALES\Resources\API;
 
 trait NodeResponse
 {
