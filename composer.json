@@ -15,7 +15,7 @@
             "email": "info@shiftech.co.ke"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "guzzlehttp/guzzle": "^7.4"
     },

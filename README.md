@@ -126,7 +126,7 @@ These are the responses.
 
 | Version | Status | Packagist                    | Namespace | Repo                                                                             |
 | ------- | ------ | ---------------------------- | --------- |----------------------------------------------------------------------------------|
-| 1.x     | Latest | `shiftechafrica/smsales-php-sdk` | `SMSALES`     | [v1.0.5](https://github.com/SHIFTECH-AFRICA/smsales-php-sdk/releases/tag/v1.0.5) |
+| 1.x     | Latest | `shiftechafrica/smsales-php-sdk` | `SMSALES`     | [v1.0.6](https://github.com/SHIFTECH-AFRICA/smsales-php-sdk/releases/tag/v1.0.6) |
 
 [smsales-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/smsales-php-sdk.git
 
