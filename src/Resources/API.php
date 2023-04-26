@@ -28,7 +28,7 @@ class API extends JsonResource
     public function with($request): array
     {
         return [
-            'api-version' => '1.0.0',
+            'api-version' => '1.0.8',
             'author' => 'smsales',
             'author-url' => url('https://smsales.co.ke'),
         ];

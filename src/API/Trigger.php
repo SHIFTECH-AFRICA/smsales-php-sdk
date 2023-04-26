@@ -54,6 +54,50 @@ class Trigger
 
     /**
      * -------------------------------
+     * get sms account balance
+     * database from the api
+     * -------------------------------
+     * @return mixed
+     */
+    public function accountSmsBalance(): mixed
+    {
+        try {
+            return json_decode($this->processRequest(
+                config('smsales.url.smsales.account-balance'),
+                'GET',
+            ));
+        } catch (Exception $exception) {
+            return $this->errorResponse(
+                $exception->getMessage(),
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
+
+    /**
+     * -------------------------------
+     * get sms sender ids balance
+     * database from the api
+     * -------------------------------
+     * @return mixed
+     */
+    public function senderIDSmsBalance(): mixed
+    {
+        try {
+            return json_decode($this->processRequest(
+                config('smsales.url.smsales.sender-balance'),
+                'GET',
+            ));
+        } catch (Exception $exception) {
+            return $this->errorResponse(
+                $exception->getMessage(),
+                Response::HTTP_INTERNAL_SERVER_ERROR
+            );
+        }
+    }
+
+    /**
+     * -------------------------------
      * Initiate bulk sms
      * express transactions
      * -------------------------------

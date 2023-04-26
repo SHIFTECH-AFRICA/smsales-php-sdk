@@ -15,6 +15,8 @@ return [
         'smsales' => [
             'token' => 'token', // GET
             'sms' => 'sms', // GET
+            'account-balance' => 'sms/balance/account', // GET
+            'sender-balance' => 'sms/balance/sender', // GET
             'send' => 'sms/send', // POST
         ]
     ],

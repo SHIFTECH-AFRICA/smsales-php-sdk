@@ -78,6 +78,18 @@ How to use the smsales-php-sdk to initiate different levels of *api's*
          * Fetch latest sent sms
          */
         (new Trigger())->index();
+        
+        /**
+         * get sms account balance
+         * @return mixed
+         */
+        (new Trigger())->accountSmsBalance());
+        
+        /**
+         * get sms sender ids balance
+         * @return mixed
+         */
+        (new Trigger())->senderIDSmsBalance());
   
         /**
          * initiate bulk sms
@@ -126,7 +138,7 @@ These are the responses.
 
 | Version | Status | Packagist                    | Namespace | Repo                                                                             |
 | ------- | ------ | ---------------------------- | --------- |----------------------------------------------------------------------------------|
-| 1.x     | Latest | `shiftechafrica/smsales-php-sdk` | `SMSALES`     | [v1.0.6](https://github.com/SHIFTECH-AFRICA/smsales-php-sdk/releases/tag/v1.0.6) |
+| 1.x     | Latest | `shiftechafrica/smsales-php-sdk` | `SMSALES`     | [v1.0.8](https://github.com/SHIFTECH-AFRICA/smsales-php-sdk/releases/tag/v1.0.8) |
 
 [smsales-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/smsales-php-sdk.git
 
