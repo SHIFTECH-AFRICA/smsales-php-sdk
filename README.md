@@ -126,9 +126,9 @@ These are the responses.
   "sender":"SHIFTECH",
   "apiSender":"shiftech",
   "phoneNumbers":[
-    "254713255791",
-    "254742771316",
-    "254748653542"
+    "254XXXXXXXXX",
+    "254XXXXXXXXX",
+    "254XXXXXXXXX"
   ],
   "batch":"1CRVD1GEXE",
   "account":{
