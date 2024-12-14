@@ -5,13 +5,11 @@ namespace SMSALES\Traits;
 
 
 use Exception;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Promise\PromiseInterface;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use JetBrains\PhpStorm\ArrayShape;
 
 trait NodeProcessing
 {
@@ -24,23 +22,23 @@ trait NodeProcessing
     private function getToken(): mixed
     {
         $options = [
-            'headers' => [
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json',
-                'Authorization' => 'Basic ' . config('smsales.smsales_token')
-            ]
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+            'Authorization' => 'Basic ' . config('smsales.smsales_token')
         ];
 
         // check if cache is active
         if (Cache::has('smsales_access_token')) {
             return Cache::get('smsales_access_token');
         } else {
-            $response = json_decode($this->processRequest(
-                config('smsales.url.smsales.token'),
-                'GET',
-                $options,
-                true
-            ));
+            $response = json_decode(Http::withHeaders($options)
+                ->baseUrl(config('smsales.url.endpoint'))
+                ->timeout(config('smsales.timeout'))
+                ->connectTimeout(config('smsales.connect_timeout'))
+                ->retry(2)
+                ->get(
+                    config('smsales.url.smsales.token')
+                ));
 
             return $this->cacheAccessToken($response);
         }
@@ -60,67 +58,45 @@ trait NodeProcessing
         });
     }
 
-    /**
-     * ---------------------
-     * set request options
-     * ---------------------
-     * @param array $data
-     * @return array[]
-     */
-    #[ArrayShape(['headers' => "string[]", 'json' => "array"])]
-    private function setRequestOptions(array $data): array
-    {
-        return [
-            'headers' => [
-                'Accept' => 'application/json',
-                'Content-Type' => 'application/json',
-                'Authorization' => 'Bearer ' . $this->getToken()
-            ],
-            'json' => $data,
-        ];
-    }
 
     /**
-     * ---------------------------------
-     * process the request
+     * process the request here
      * @param string $requestUrl
      * @param string $method
      * @param array $data
-     * @param bool $token
-     * @return Exception|string|GuzzleException
-     * ---------------------------------
+     * @return PromiseInterface|Exception|Response
      */
-    public function processRequest(string $requestUrl, string $method = 'POST', array $data = [], bool $token = false): Exception|string|GuzzleException
+    public function processRequest(string $requestUrl, string $method = 'POST', array $data = []): PromiseInterface|Exception|Response
     {
         try {
-            // define the guzzle client
-            $client = new Client([
-                'base_uri' => $this->baseUri,
-                'timeout' => config('smsales.timeout'),
-                'connect_timeout' => config('smsales.connect_timeout'),
-                'protocols' => ['http', 'https'],
-            ]);
-
-            // make the request
-            if ($token) {
-                $response = $client->request($method, $requestUrl, $data);
+            if ($method == 'POST') {
+                $response = Http::acceptJson()
+                    ->baseUrl(config('smsales.url.endpoint'))
+                    ->withToken($this->getToken())
+                    ->timeout(config('smsales.timeout'))
+                    ->connectTimeout(config('smsales.connect_timeout'))
+                    ->retry(3)
+                    ->post(
+                        $requestUrl,
+                        $data
+                    );
             } else {
-                $response = $client->request($method, $requestUrl, $this->setRequestOptions($data));
+                $response = Http::acceptJson()
+                    ->baseUrl(config('smsales.url.endpoint'))
+                    ->withToken($this->getToken())
+                    ->timeout(config('smsales.timeout'))
+                    ->connectTimeout(config('smsales.connect_timeout'))
+                    ->retry(3)
+                    ->get(
+                        $requestUrl,
+                        $data
+                    );
             }
 
-
-            return ($response->getBody()->getContents());
-        } catch (ClientException $clientException) {
-            $exception = $clientException->getResponse()->getBody()->getContents();
-            Log::critical('client-exception' . $clientException->getMessage());
-            return $exception;
-        } catch (ServerException $serverException) {
-            $exception = $serverException->getResponse()->getBody()->getContents();
-            Log::critical('server-exception' . $serverException->getMessage());
-            return $exception;
-        } catch (GuzzleException $guzzleException) {
-            Log::critical('guzzle-exception' . $guzzleException->getMessage());
-            return $guzzleException;
+            return $response;
+        } catch (Exception  $connectionException) {
+            Log::critical($method . ' Smsales Sdk Client Connection Exception' . $connectionException->getMessage());
+            return $connectionException;
         }
     }
 }

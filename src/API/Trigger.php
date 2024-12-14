@@ -5,8 +5,6 @@ namespace SMSALES\API;
 
 
 use Exception;
-use Illuminate\Config\Repository;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Response;
 use SMSALES\Traits\NodeProcessing;
 use SMSALES\Traits\NodeResponse;
@@ -14,21 +12,6 @@ use SMSALES\Traits\NodeResponse;
 class Trigger
 {
     use NodeProcessing, NodeResponse;
-
-    /**
-     * @var Repository|Application|mixed
-     */
-    private mixed $baseUri;
-
-    /**
-     * -----------------------------
-     * create class instance here
-     * -----------------------------
-     */
-    public function __construct()
-    {
-        $this->baseUri = config('smsales.url.endpoint');
-    }
 
     /**
      * -------------------------------
