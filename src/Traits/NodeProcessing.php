@@ -35,7 +35,7 @@ trait NodeProcessing
                 ->baseUrl(config('smsales.url.endpoint'))
                 ->timeout(config('smsales.timeout'))
                 ->connectTimeout(config('smsales.connect_timeout'))
-                ->retry(2)
+                ->retry(1)
                 ->get(
                     config('smsales.url.smsales.token')
                 ));
@@ -75,7 +75,7 @@ trait NodeProcessing
                     ->withToken($this->getToken())
                     ->timeout(config('smsales.timeout'))
                     ->connectTimeout(config('smsales.connect_timeout'))
-                    ->retry(3)
+                    ->retry(1)
                     ->post(
                         $requestUrl,
                         $data
@@ -86,7 +86,7 @@ trait NodeProcessing
                     ->withToken($this->getToken())
                     ->timeout(config('smsales.timeout'))
                     ->connectTimeout(config('smsales.connect_timeout'))
-                    ->retry(3)
+                    ->retry(1)
                     ->get(
                         $requestUrl,
                         $data

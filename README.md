@@ -122,19 +122,19 @@ These are the responses.
 
 ```json
 {
-  "sent":true,
-  "sender":"SHIFTECH",
-  "apiSender":"shiftech",
-  "phoneNumbers":[
-    "254XXXXXXXXX",
-    "254XXXXXXXXX",
-    "254XXXXXXXXX"
-  ],
-  "batch":"1CRVD1GEXE",
-  "account":{
-    "smsBalance":"663",
-    "smsUsage":"24"
-  }
+    "sent": true,
+    "sender": "SHIFTECH",
+    "apiSender": "shiftech",
+    "phoneNumbers": [
+        "254XXXXXXXXX",
+        "254XXXXXXXXX",
+        "254XXXXXXXXX"
+    ],
+    "batch": "1CRVD1GEXE",
+    "account": {
+        "smsBalance": "663",
+        "smsUsage": "24"
+    }
 }
 ```
 
@@ -142,7 +142,7 @@ These are the responses.
 
 | Version | Status | Packagist                    | Namespace | Repo                                                                             |
 | ------- | ------ | ---------------------------- | --------- |----------------------------------------------------------------------------------|
-| 1.x     | Latest | `shiftechafrica/smsales-php-sdk` | `SMSALES`     | [v1.0.9](https://github.com/SHIFTECH-AFRICA/smsales-php-sdk/releases/tag/v1.0.9) |
+| 1.x     | Latest | `shiftechafrica/smsales-php-sdk` | `SMSALES`     | [v1.2.0](https://github.com/SHIFTECH-AFRICA/smsales-php-sdk/releases/tag/v1.2.0) |
 
 [smsales-php-sdk-repo]: https://github.com/SHIFTECH-AFRICA/smsales-php-sdk.git
 
