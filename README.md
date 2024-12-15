@@ -1,4 +1,4 @@
-# <p align="center"><a href="https://smsales.co.ke" target="_blank"><img width="200" src="https://smsales.co.ke/images/logo.png"></a></p>
+# <p align="center"><a href="https://smsales.co.ke" target="_blank"><img width="200" src="https://smsales.co.ke/assets/images/logo.png"></a></p>
 
 <p align="center">
   <b>Always Delivering</b><br>
