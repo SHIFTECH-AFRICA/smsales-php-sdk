@@ -2,7 +2,7 @@
 
 namespace SMSALES;
 
-use Carbon\Laravel\ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
 class SMSALEServiceProvider extends ServiceProvider
 {
@@ -12,7 +12,7 @@ class SMSALEServiceProvider extends ServiceProvider
      * ----------------------------------------------------
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         /**
          * ---------------------------
@@ -40,7 +40,7 @@ class SMSALEServiceProvider extends ServiceProvider
      * ------------------------------
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }
