@@ -172,7 +172,7 @@ use SMSALES\API\Trigger;
 ## 🛡️ Security Vulnerabilities
 
 If you discover any security vulnerabilities, please contact:  
-📧 **[Support](mailto:bugs@shiftech.co.ke)**
+📧 **[Bugs](mailto:bugs@shiftech.co.ke)**
 
 ---
 
