@@ -36,7 +36,7 @@ This SDK enables seamless integration of SMS services into your Laravel or stand
 
 With SMSALES, you can focus on communication — while the SDK handles the complexity of SMS API interactions.
 
-📘 **Official Documentation:** [https://docs.smsales.co.ke](https://smsales.co.ke/docs)
+📘 **Official Documentation:** [https://smsales.co.ke/docs](https://smsales.co.ke/docs)
 
 ---
 
