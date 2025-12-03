@@ -18,7 +18,7 @@
     <img src="https://poser.pugx.org/shiftechafrica/smsales-php-sdk/downloads">
   </a>
   <br><br>
-  <a href="https://docs.smsales.co.ke/"><img src="https://github.com/dev-techguy/TechGuy/blob/master/doc.png" width="200" alt="Documentation"></a>
+  <a href="https://smsales.co.ke/docs"><img src="https://github.com/dev-techguy/TechGuy/blob/master/doc.png" width="200" alt="Documentation"></a>
 </p>
 
 ---
@@ -36,7 +36,7 @@ This SDK enables seamless integration of SMS services into your Laravel or stand
 
 With SMSALES, you can focus on communication — while the SDK handles the complexity of SMS API interactions.
 
-📘 **Official Documentation:** [https://docs.smsales.co.ke](https://docs.smsales.co.ke)
+📘 **Official Documentation:** [https://docs.smsales.co.ke](https://smsales.co.ke/docs)
 
 ---
 
